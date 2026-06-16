@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from utils.database import get_distinct_values, get_filtered_questions, record_attempt
+from utils.calculator import render_calculator
 
 st.set_page_config(page_title="Quiz Mode | CAT Practice", layout="wide")
 
@@ -60,6 +61,11 @@ if not st.session_state.quiz_active and not st.session_state.quiz_submitted:
         }
         start_quiz(filters, time_limit)
         st.rerun()
+
+st.sidebar.markdown("---")
+st.sidebar.subheader("🧮 Calculator")
+with st.sidebar:
+    render_calculator()
 
 # --- MAIN CONTENT ---
 st.title("⏱️ Timed Quiz Mode")

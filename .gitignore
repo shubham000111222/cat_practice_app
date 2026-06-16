@@ -8,3 +8,6 @@ ENV/
 env.bak/
 venv.bak/
 .streamlit/
+dist/
+build/
+*.spec

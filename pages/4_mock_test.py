@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from utils.mock_generator import generate_mock, save_mock_result
+from utils.calculator import render_calculator
 
 st.set_page_config(page_title="Mock Test | CAT Practice", layout="wide")
 
@@ -114,7 +115,12 @@ elif st.session_state.mock_active:
             if q['section'] == selected_nav_section:
                 st.session_state.mock_q_idx = i
                 st.rerun()
-    
+
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("🧮 Calculator")
+    with st.sidebar:
+        render_calculator()
+        
     # Question view
     q = qs[idx]
     

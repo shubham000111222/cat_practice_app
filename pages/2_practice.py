@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from utils.database import get_distinct_values, get_filtered_questions, record_attempt, toggle_bookmark
+from utils.calculator import render_calculator
 
 st.set_page_config(page_title="Practice | CAT Practice", layout="wide")
 
@@ -53,6 +54,11 @@ if st.sidebar.button("Start Practice", use_container_width=True):
         "limit": num_qs
     }
     load_questions(filters)
+
+st.sidebar.markdown("---")
+st.sidebar.subheader("🧮 Calculator")
+with st.sidebar:
+    render_calculator()
 
 # --- MAIN CONTENT ---
 st.title("📝 Practice Mode")
