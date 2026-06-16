@@ -11,13 +11,12 @@ echo This will take several minutes. Do not close this window!
 :: --onedir creates a folder with the lightning-fast EXE inside.
 python -m PyInstaller --noconfirm ^
   --onedir ^
-  --windowed ^
   --name "CAT_Practice_Platform" ^
   --add-data "app.py;." ^
   --add-data "pages;pages/" ^
   --add-data "utils;utils/" ^
   --add-data "database;database/" ^
-  --copy-metadata streamlit ^
+  --collect-all streamlit ^
   run_app.py
 
 echo.

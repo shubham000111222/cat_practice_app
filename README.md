@@ -19,6 +19,7 @@ An offline, fully functional CAT preparation platform built with Streamlit and S
 If you have the compiled executable:
 1. Open the `dist/CAT_Practice_Platform/` folder.
 2. Double-click `CAT_Practice_Platform.exe`.
+   > *Note: A black console window will open. This is the local server running. Do not close it until you are finished practicing! Your browser will open automatically.*
 
 ### Manual Setup (Python)
 1. Ensure you have Python installed.
