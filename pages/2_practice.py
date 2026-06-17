@@ -43,9 +43,6 @@ selected_sub = st.sidebar.selectbox("Subtopic", subtopics)
 diffs = ["All", "Easy", "Medium", "Hard"]
 selected_diff = st.sidebar.selectbox("Difficulty", diffs)
 
-sources = ["All"] + get_distinct_values("source")
-selected_source = st.sidebar.selectbox("Source / Year", sources)
-
 num_qs = st.sidebar.slider("Number of Questions", 5, 50, 10)
 
 if st.sidebar.button("Start Practice", use_container_width=True):
@@ -54,7 +51,6 @@ if st.sidebar.button("Start Practice", use_container_width=True):
         "topic": selected_top,
         "subtopic": selected_sub,
         "difficulty": selected_diff,
-        "source": selected_source,
         "limit": num_qs
     }
     load_questions(filters)
