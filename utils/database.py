@@ -75,7 +75,7 @@ def run_migrations():
     conn.commit()
     conn.close()
 
-def get_filtered_questions(section=None, topic=None, subtopic=None, difficulty=None, limit=10, offset=0):
+def get_filtered_questions(section=None, topic=None, subtopic=None, difficulty=None, source=None, limit=10, offset=0):
     conn = get_connection()
     query = "SELECT * FROM questions WHERE 1=1"
     params = []
@@ -92,6 +92,9 @@ def get_filtered_questions(section=None, topic=None, subtopic=None, difficulty=N
     if difficulty and difficulty != "All":
         query += " AND difficulty = ?"
         params.append(difficulty)
+    if source and source != "All":
+        query += " AND source = ?"
+        params.append(source)
         
     # We want random questions for practice, but SQLite RANDOM() is slow on large tables.
     # Since we have pagination, we order by random but within a subquery if needed. 

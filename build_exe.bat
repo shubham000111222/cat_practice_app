@@ -16,6 +16,7 @@ python -m PyInstaller --noconfirm ^
   --add-data "pages;pages/" ^
   --add-data "utils;utils/" ^
   --add-data "database;database/" ^
+  --add-data "images;images/" ^
   --collect-all streamlit ^
   run_app.py
 
